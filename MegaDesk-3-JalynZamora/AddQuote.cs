@@ -12,7 +12,6 @@ namespace MegaDesk_3_JalynZamora
 {
     public partial class AddQuote : Form
     {
-        public event System.ComponentModel.CancelEventHandler Validating;
 
         public AddQuote()
         {
@@ -32,41 +31,21 @@ namespace MegaDesk_3_JalynZamora
             Close();
         }
 
-        private void widthInput_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        private void WidthInput_Validating(object sender, EventArgs e)
         {
-            string errorMsg;
-            if(!ValidWidth(widthInput.Value, out errorMsg))
-            {
-                e.Cancel = true;
-                widthInput.Select(0, 1);
-                //this.errorProvider1.SetError(widthInput, errorMsg);
-            }
-        }
 
-        private void widthInput_Validated(object sender, System.EventArgs e)
-        {
-            //errorProvider1.SetError(widthInput, "");
-        }
-
-        public bool ValidWidth(decimal width, out string errorMessage)
-        {
-            if (widthInput.Value < 24)
-            {
-                errorMessage = "Width of desk must be greater than 24 inches";
-                return false;
-            }
-            if (widthInput.Value > 96)
-            {
-                errorMessage = "Width of desk must be less than 96 inches.";
-                return false;
-            }
-            errorMessage = "Width must be between 24 and 96 inches.";
-            return false;
         }
 
         private void depthInput_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (char.IsControl(e.KeyChar))
+            {
+                depthInput.Value = 12;
+            }
 
+            else if (char.IsDigit(e.KeyChar))
+            {
+            }
         }
     }
 }
