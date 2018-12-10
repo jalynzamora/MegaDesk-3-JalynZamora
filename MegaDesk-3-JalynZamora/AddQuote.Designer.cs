@@ -35,7 +35,6 @@
             this.widthInput_Validating = new System.Windows.Forms.NumericUpDown();
             this.width = new System.Windows.Forms.Label();
             this.depthInput = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.widthInput_Validating)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.depthInput)).BeginInit();
             this.SuspendLayout();
@@ -97,21 +96,11 @@
             this.depthInput.TabIndex = 12;
             this.depthInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.depthInput_KeyPress);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "label1";
-            // 
             // AddQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(709, 435);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.depthInput);
             this.Controls.Add(this.width);
             this.Controls.Add(this.widthInput_Validating);
@@ -138,6 +127,5 @@
         private System.Windows.Forms.NumericUpDown widthInput_Validating;
         private System.Windows.Forms.Label width;
         private System.Windows.Forms.NumericUpDown depthInput;
-        private System.Windows.Forms.Label label1;
     }
 }
